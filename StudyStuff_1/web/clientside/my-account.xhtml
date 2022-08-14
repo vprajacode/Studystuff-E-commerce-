@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+          xmlns:f="http://xmlns.jcp.org/jsf/core"
+       xmlns:p="http://primefaces.org/ui"
+        xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <ui:include src = "css.xhtml" />
+    </h:head>
+    <h:body>
+           <!-- Preloader Start -->
+    <div class="ft-preloader active">
+        <div class="ft-preloader-inner h-100 d-flex align-items-center justify-content-center">
+            <div class="ft-child ft-bounce1"></div>
+            <div class="ft-child ft-bounce2"></div>
+            <div class="ft-child ft-bounce3"></div>
+        </div>
+    </div>
+             <ui:include src = "header.xhtml" />
+             <div class="main-content-wrapper">
+            <div class="page-content-inner ptb--80 ptb-md--60 pb-sm--55">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="user-dashboard-tab flex-column flex-md-row">
+                                <div class="user-dashboard-tab__head nav flex-md-column" role="tablist" aria-orientation="vertical">
+                                    <button type="button" class="nav-link active" data-bs-toggle="tab" role="tab" data-bs-target="#dashboard" aria-controls="dashboard" aria-selected="true">Dashboard</button>
+                                  
+                                    <button type="button" class="nav-link" data-bs-toggle="tab" role="tab" data-bs-target="#accountdetails" aria-controls="accountdetails" aria-selected="true">Account Details</button>
+<!--                                    <a type="button" class="nav-link" href="login-register.html">Logout</a>-->
+<!--<a href="loginpage.xhtml"><h:commandLink  action="#{clientBean.ulogout()}" class="nav-link" >  
+                                <h:outputText value="logout"></h:outputText>  
+                                </h:commandLink></a> -->
+                                     <a href="loginpage.xhtml">Log out</a>
+                                </div>
+                                <div class="user-dashboard-tab__content tab-content">
+                                    <div class="tab-pane fade show active" id="dashboard">
+                                        <p>Hello <strong> #{clientBean.uname}</strong> (not <strong>#{clientBean.uname}</strong>? <a href="#">Log out</a>)</p>
+                                        <p>From your account dashboard. you can easily check &amp; view your <a href="">recent orders</a>, manage your <a href="">shipping and billing addresses</a> and <a href="">edit your password and account details</a>.</p>
+                                    </div>
+                                   
+                                    <div class="tab-pane fade" id="accountdetails">
+                                        <form action="#" class="form form--account">
+                                            <div class="row mb--20">
+                                                <div class="col-md-6 mb-sm--20">
+                                                    <div class="form__group">
+                                                        <label class="form__label" for="f_name">First name <span class="required">*</span></label>
+                                                        <input type="text" name="f_name" id="f_name" class="form__input"/>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form__group">
+                                                        <label class="form__label" for="l_name">Last name <span class="required">*</span></label>
+                                                        <input type="text" name="l_name" id="l_name" class="form__input"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb--20">
+                                                <div class="col-12">
+                                                    <div class="form__group">
+                                                        <label class="form__label" for="d_name">Display name <span class="required">*</span></label>
+                                                        <input type="text" name="d_name" id="d_name" class="form__input"/>
+                                                        <span class="form__notes"><em>This will be how your name will be displayed in the account section and in reviews</em></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb--20">
+                                                <div class="col-12">
+                                                    <div class="form__group">
+                                                        <label class="form__label" for="email">Email Address <span class="required">*</span></label>
+                                                        <input type="email" name="email" id="email" class="form__input"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <fieldset class="form__fieldset mb--20">
+                                                <legend class="form__legend">Password change</legend>
+                                                <div class="row mb--20">
+                                                    <div class="col-12">
+                                                        <div class="form__group">
+                                                            <label class="form__label" for="cur_pass">Current password (leave blank to leave unchanged)</label>
+                                                            <input type="password" name="cur_pass" id="cur_pass" class="form__input"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb--20">
+                                                    <div class="col-12">
+                                                        <div class="form__group">
+                                                            <label class="form__label" for="new_pass">New password (leave blank to leave unchanged)</label>
+                                                            <input type="password" name="new_pass" id="new_pass" class="form__input"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="form__group">
+                                                            <label class="form__label" for="conf_new_pass">Confirm new password</label>
+                                                            <input type="password" name="conf_new_pass" id="conf_new_pass" class="form__input"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="form__group">
+                                                        <input type="submit" value="Save Changes" class="btn btn-size-md"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+               <ui:include src = "footer.xhtml" />
+               <ui:include src = "script.xhtml" />
+    </h:body>
+</html>
+

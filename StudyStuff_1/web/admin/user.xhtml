@@ -1,0 +1,170 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+       xmlns:p="http://primefaces.org/ui"    
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <ui:include src = "components/css.xhtml" />
+    </h:head>
+    <h:body class="hold-transition skin-blue sidebar-mini">
+        <div class="wrapper">
+            <ui:insert name = "header" >
+                    <ui:include src = "components/header.xhtml" />
+                </ui:insert>
+                <ui:insert name = "nav" >
+                    <ui:include src = "components/nav.xhtml" />
+                </ui:insert>
+            <div class="content-wrapper">
+                <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <div class="row">
+                <div class="col-sm-6 col-md-6 col-lg-6 pull-left">
+                  <b style="font-size: 20px;">Seller Data</b>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-6 ">
+<!--                <button type="button" class="btn btn-success pull-right" data-toggle="modal" data-target="#mymodel">Add</button>-->
+                              
+                </div>
+              </div>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body" style="overflow-x:auto;">
+                <h:form>
+<!--                    <h:dataTable id="example2" styleClass="example2" class="table table-bordered table-hover" value="#{adminBean.showUserdetails()}" var="userobj">
+                    <h:column>  
+                        <f:facet name="header">ID</f:facet>  
+                        <h:outputText value="#{userobj.userId}"/>  
+                    </h:column>
+                    <h:column>  
+                        <f:facet name="header">UserName</f:facet>  
+                        <h:outputText value="#{userobj.userName}"/>  
+                    </h:column>
+                    <h:column>  
+                        <f:facet name="header">Email</f:facet>  
+                        <h:outputText value="#{userobj.email}"/>  
+                    </h:column>
+                    <h:column>  
+                        <f:facet name="header">Mobileno</f:facet>  
+                        <h:outputText value="#{userobj.mobile}"/>  
+                    </h:column>    
+                    <h:column>  
+                        
+                        <f:facet name="header">Create date</f:facet>  
+                        <h:outputText value="#{userobj.createdAt}"> 
+                        <f:convertDateTime pattern="dd-MM-yyyy" />
+                        </h:outputText>  
+                    </h:column>
+                    <h:column>  
+                        <f:facet name="header">First name</f:facet>  
+                        <h:outputText value="#{userobj.firstName}"/>  
+                    </h:column>
+                    
+                    <h:column>  
+                        <f:facet name="header">Delete</f:facet>  
+                        <h:commandLink id="btndelete" action="#{adminBean.deleteuser(userobj.userId)}" styleClass="btn btn-icon">
+                                     <h:outputText value="Delete"/>   
+                        </h:commandLink> 
+                    </h:column>
+                </h:dataTable>  -->
+                    <p:dataTable id="dt-user" widgetVar="dtuser" var="userobj" value="#{adminBean.showUserdetails()}"
+                                     reflow="true" styleClass="products-table" showGridlines="true"
+                                     paginator="true" rows="10" rowSelectMode="add" paginatorPosition="bottom"        
+                                     >
+                           
+
+
+                        <p:column headerText="Id" style="font-size: medium" sortBy="#{userobj.userId}" filterBy="#{userobj.userId}">
+                            <h:outputText value="#{userobj.userId}" style="font-size: medium"/>
+                            </p:column>
+                        <p:column headerText="User Name" style="font-size: medium" sortBy="#{userobj.userName}" filterBy="#{userobj.userName}">
+                                <h:outputText value="#{userobj.userName}" style="font-size: medium"/>
+                            </p:column>
+                        <p:column headerText="Mobile no." style="font-size: medium" sortBy="#{userobj.mobile}" filterBy="#{userobj.mobile}">
+                            <h:outputText value="#{userobj.mobile}" style="font-size: medium"/>
+                            </p:column>
+                        <p:column headerText="firstName" style="font-size: medium" sortBy="#{userobj.firstName}" filterBy="#{userobj.firstName}">
+                            <h:outputText value="#{userobj.firstName}" style="font-size: medium"/>
+                            </p:column>
+                        <p:column headerText="lastName" style="font-size: medium" sortBy="#{userobj.lastName}" filterBy="#{userobj.lastName}">
+                            <h:outputText value="#{userobj.lastName}" style="font-size: medium"/>
+                            </p:column>
+                       
+                        <p:column headerText="created at" style="font-size: medium" sortBy="#{userobj.createdAt}" filterBy="#{discountobj.createdAt}" >
+                                   <h:outputText value="#{userobj.createdAt}" style="font-size: medium"/>
+                            </p:column>  
+                               
+                           
+                            
+                            <p:column headerText="Delete" style="font-size: medium">
+                                <p:commandLink id="btndelete" action="#{adminBean.deleteuser(userobj.userId)}" ajax="false">
+                            <i class="pi pi-times" style="font-size: 2rem"></i>
+                            </p:commandLink>    
+                            </p:column>
+                            
+                            
+                        </p:dataTable>
+                </h:form>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->    
+        <div class="modal fade" id="mymodel">
+          <div class="modal-dialog modal-md modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h3 class="modal-title text-primary">State</h3>  
+              </div>
+              <!-- Form 1 Start  -->
+              <h:form id="formone" class="form-group">
+                <div class="modal-body">
+                  <div class="row">
+                    
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <label>State</label>
+                        <h:inputText class="form-control" id="StateName" value="#"/>
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <div class="row">
+                    <div class="col-md-12 text-center" style="margin-top: 10px;">
+                        <h:commandButton id="submit" class="btn btn-primary" value="Submit" action="#{adminBean.addstate()}">
+                            <f:ajax execute="@form" render="@form" />
+                        </h:commandButton>
+                    </div>
+                  </div>
+                </div>
+              </h:form>
+            </div>
+          </div>
+        </div>
+            </div>
+<footer class="main-footer">
+                    <ui:insert name = "footer" >
+                        <ui:include src = "components/footer.xhtml" />
+                    </ui:insert>
+                </footer>
+        </div>
+        
+        
+        
+    
+
+<ui:include src = "components/bottomscript.xhtml" />
+    </h:body>
+</html>
+

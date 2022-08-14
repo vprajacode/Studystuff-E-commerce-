@@ -1,0 +1,16 @@
+{
+  "name": "beck",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "scss": "node-sass --watch scss -o assets/css",
+    "bootstrap": "node-sass --watch scss/bootstrap.scss -o assets/css"
+  },
+  "author": "Hasan Mobarak",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.0.2",
+    "node-sass": "^4.9.3"
+  }
+}

@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Studystuff.com </title>
+    </h:head>
+    <h:body>
+        <header class="main-header">
+                
+                <a href="index.xhtml" class="logo">
+                  
+                  <span class="logo-mini">Admin</span>
+                  
+                  <span class="logo-lg"><b>Admin Panel</b></span>
+                </a>
+               
+                <nav class="navbar navbar-static-top">
+                 
+                  <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                  </a>
+                    <h:form>
+                    <div class="navbar-custom-menu">
+                        <ul class="nav navbar-nav">
+                            <li class="">
+<!--                                <a style="background-color: red;" href="#" >Sign out</a>-->
+                                <h:commandLink id="image-link-id" action="#{clientBean.logout()}" style="background-color: maroon;">  
+                                <h:outputText value="Sign Out"></h:outputText>  
+                                </h:commandLink>  
+                            </li>
+                        </ul>
+                    </div>
+                    </h:form>    
+<!--                  <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                      
+                      
+                      <li class="dropdown user user-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <img src="../admin/asset/dist/img/user2-160x160.jpg" class="user-image" alt="User Image"/>
+
+                            <span class="hidden-xs">#</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                          
+                          <li class="user-header">
+                            <img src="../admin/asset/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image"/>
+                            <p>
+                              Alexander Pierce - Web Developer
+                              <small>Member since Nov. 2012</small>
+                            </p>
+                          </li>
+                          
+                          <li class="user-footer">
+                            <div class="pull-left">
+                              <a href="#" class="btn btn-default btn-flat">Profile</a>
+                            </div>
+                            <div class="pull-right">
+                              <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                            </div>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>-->
+                </nav>
+              </header>
+    </h:body>
+</html>
+

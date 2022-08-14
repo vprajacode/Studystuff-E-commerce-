@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+          
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <ui:include src = "components/css.xhtml" />
+    </h:head>
+    <h:body class="hold-transition skin-blue sidebar-mini">
+        <div class="wrapper">
+            <ui:insert name = "header" >
+                    <ui:include src = "components/header.xhtml" />
+                </ui:insert>
+                <ui:insert name = "nav" >
+                    <ui:include src = "components/nav.xhtml" />
+                </ui:insert>
+            <div class="content-wrapper">
+                <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <div class="row">
+                <div class="col-sm-6 col-md-6 col-lg-6 pull-left">
+                  <b style="font-size: 20px;">Seller Data</b>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-6 ">
+<!--                <button type="button" class="btn btn-success pull-right" data-toggle="modal" data-target="#mymodel">Add</button>-->
+                              
+                </div>
+              </div>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body" style="overflow-x:auto;">
+                <h:form>
+                    <h:dataTable id="example2" styleClass="example2" class="table table-bordered table-hover" value="#{clientBean.showSeller()}" var="seller">
+                    <h:column>  
+                        <f:facet name="header">ID</f:facet>  
+                        <h:outputText value="#{seller.userId}"/>  
+                    </h:column>
+                    <h:column>  
+                        <f:facet name="header">Seller Name</f:facet>  
+                        <h:outputText value="#{seller.userName}"/>  
+                    </h:column>
+                    <h:column>  
+                        <f:facet name="header">Email</f:facet>  
+                        <h:outputText value="#{seller.email}"/>  
+                    </h:column>
+                    <h:column>  
+                        <f:facet name="header">Mobileno</f:facet>  
+                        <h:outputText value="#{seller.mobileNo}"/>  
+                    </h:column>    
+                    <h:column>  
+                        
+                        <f:facet name="header">Create date</f:facet>  
+                        <h:outputText value="#{seller.createDate}"> 
+                        <f:convertDateTime pattern="dd-MM-yyyy" />
+                        </h:outputText>  
+                    </h:column>
+                    <h:column>  
+                        <f:facet name="header">Status</f:facet>  
+                        <h:outputText value="#{seller.isActive}"/>  
+                    </h:column>
+                    
+                    <h:column>  
+                        <f:facet name="header">Delete</f:facet>  
+                        <h:commandLink id="btndelete" action="#{clientBean.deleteuser(seller.userId)}" styleClass="btn btn-icon">
+                                     <h:outputText value="Delete"/>   
+                        </h:commandLink> 
+                    </h:column>
+                </h:dataTable>  
+                </h:form>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->    
+        <div class="modal fade" id="mymodel">
+          <div class="modal-dialog modal-md modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h3 class="modal-title text-primary">State</h3>  
+              </div>
+              <!-- Form 1 Start  -->
+              <h:form id="formone" class="form-group">
+                <div class="modal-body">
+                  <div class="row">
+                    
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <label>State</label>
+                        <h:inputText class="form-control" id="StateName" value="#{adminBean.state}"/>
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <div class="row">
+                    <div class="col-md-12 text-center" style="margin-top: 10px;">
+                        <h:commandButton id="submit" class="btn btn-primary" value="Submit" action="#{adminBean.addstate()}">
+                            <f:ajax execute="@form" render="@form" />
+                        </h:commandButton>
+                    </div>
+                  </div>
+                </div>
+              </h:form>
+            </div>
+          </div>
+        </div>
+            </div>
+<footer class="main-footer">
+                    <ui:insert name = "footer" >
+                        <ui:include src = "components/footer.xhtml" />
+                    </ui:insert>
+                </footer>
+        </div>
+        
+        
+        
+    
+
+<ui:include src = "components/bottomscript.xhtml" />
+    </h:body>
+</html>
+

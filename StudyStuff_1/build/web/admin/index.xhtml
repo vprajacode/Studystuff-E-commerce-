@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <ui:insert name = "css" >
+            <ui:include src = "components/css.xhtml" />
+        </ui:insert>
+    </h:head>
+    <h:body class="hold-transition skin-blue sidebar-mini">
+        <div class="wrapper">
+                <ui:insert name = "header" >
+                    <ui:include src = "components/header.xhtml" />
+                </ui:insert>
+                <ui:insert name = "nav" >
+                    <ui:include src = "components/nav.xhtml" />
+                </ui:insert>
+                <div class="content-wrapper">
+                <ui:insert name = "layout" >
+                    <ui:include src = "components/layout.xhtml" />
+                </ui:insert>
+                </div>
+                <footer class="main-footer">
+                    <ui:insert name = "footer" >
+                        <ui:include src = "components/footer.xhtml" />
+                    </ui:insert>
+                </footer>
+        </div>
+        <ui:insert name = "bootomscript" >
+            <ui:include src = "components/bottomscript.xhtml" />
+        </ui:insert>
+    </h:body>
+</html>
+
+

@@ -1,0 +1,230 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+        class="no-js" lang="zxx" 
+        xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+       xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <ui:include src = "css.xhtml" /> 
+       
+    </h:head>
+    <h:body>
+         <!-- Preloader Start -->
+    <div class="ft-preloader active">
+        <div class="ft-preloader-inner h-100 d-flex align-items-center justify-content-center">
+            <div class="ft-child ft-bounce1"></div>
+            <div class="ft-child ft-bounce2"></div>
+            <div class="ft-child ft-bounce3"></div>
+        </div>
+    </div>
+    <!-- Preloader End -->
+       <ui:include src = "header.xhtml" />
+     <!-- Breadcrumb area Start -->
+        <section class="page-title-area bg-image ptb--80" data-bg-image="assets/img/bg/page_title_bg.jpg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h1 class="page-title">Shop Left Sidebar</h1>
+                        <ul class="breadcrumb">
+                            <li><a href="index.html">Home</a></li>
+                            <li class="current"><span>Shop Left Sidebar View</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Breadcrumb area End -->
+
+        <!-- Main Content Wrapper Start -->
+        <div  class="main-content-wrapper">
+            <div class="shop-page-wrapper ptb--80">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-9 col-lg-8 order-lg-2 mb-md--50">
+                            <div class="shop-toolbar mb--50">
+                                <div class="row align-items-center">
+                                    <div class="col-md-5 mb-sm--30 mb-xs--10">
+                                        <div class="shop-toolbar__left">
+                                            <div class="product-ordering">
+                                                <select class="product-ordering__select nice-select">
+                                                    <option value="0">Default Sorting</option>
+                                                    <option value="1">Relevance</option>
+                                                    <option value="2">Name, A to Z</option>
+                                                    <option value="3">Name, Z to A</option>
+                                                    <option value="4">Price, low to high</option>
+                                                    <option value="5">Price, high to low</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <div class="shop-toolbar__right d-flex justify-content-md-end justify-content-start flex-sm-row flex-column">
+                                            <p class="product-pages"><bold>Deals that Everyone wishes </bold>  </p>
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+<!--                            new panel-->
+                            <div class="row">
+                                 <div class="col-sm-3 col-md-6 col-lg-4 col-xl-2">
+                            <aside class="shop-sidebar">
+                                <div class="shop-widget mb--40">
+                                    <h3 class="widget-title mb--25">Category</h3>
+                                    <ul class="widget-list category-list">
+                                        <li>
+                                            <a href="shop.html">
+                                                <span class="category-title">Study Chairs</span>
+                                                <i class="fa fa-angle-double-right"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="shop.html">
+                                                <span class="category-title">Study Tables</span>
+                                                <i class="fa fa-angle-double-right"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="shop.html">
+                                                <span class="category-title">Bookshelves</span>
+                                                <i class="fa fa-angle-double-right"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="shop.html">
+                                                <span class="category-title">Artificial flowers</span>
+                                                <i class="fa fa-angle-double-right"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="shop.html">
+                                                <span class="category-title">New Arrival</span>
+                                                <i class="fa fa-angle-double-right"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                
+                               
+                                <div class="shop-widget mb--40">
+                                    <h3 class="widget-title mb--25">Top Brands</h3>
+                                    <ul class="widget-list brand-list">
+                                        <li>
+                                            <a href="shop.html">
+                                                <span>Walmart</span>
+                                                <strong class="color--red font-weight-medium">10</strong>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="shop.html">
+                                                <span>Greenply</span>
+                                                <strong class="color--red font-weight-medium">50</strong>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="shop.html">
+                                                <span>H &amp; Ariana</span>
+                                                <strong class="color--red font-weight-medium">46</strong>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="shop.html">
+                                                <span>Black &amp; Woodpen</span>
+                                                <strong class="color--red font-weight-medium">46</strong>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                
+                            </aside>
+                        </div>
+                                <div class="col-sm-9 col-md-6 col-lg-8 col-xl-10 ml--10" >
+                                     <div class="shop-products">
+                                         <div class="card product"  >
+                     <h:form id="form">
+                         <p:dataView var="productobj" value="#{adminBean.showproductdata()}" rows="12" paginator="true"
+                    rowsPerPageTemplate="6,12,16"
+                    paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                    gridIcon="pi pi-th-large" listIcon="pi pi-bars">
+
+            <p:dataViewGridItem>
+                <div class="product-grid-item card border-1">
+                    <div class="product-grid-item-top">
+                        <div>
+                            <i class="pi pi-tag product-category-icon"/>
+                            <span class="product-category">#{productobj.categoryId.categoryName}</span>
+                        </div>
+                        <span class="product-badge status-#{product.inventoryStatus.name().toLowerCase()}">#{product.inventoryStatus.text}</span>
+                    </div>
+                    <div class="product-grid-item-content">
+                       
+<!--                        <p:graphicImage name="/StudyStuff_1/pics/#{productobj.productImg}" library="Web Pages"/>-->
+                         <img src="/StudyStuff_1/pics/#{productobj.productImg}" height="100px" width="100px"/>
+                        
+                        <div class="product-name">#{productobj.productName}</div>
+                        <div class="product-description">#{productobj.productDesc}</div>
+                      
+                    </div>
+                    <div class="product-grid-item-bottom">
+                        <h:outputText value="#{productobj.price}" styleClass="product-price">
+                            <f:convertNumber currencySymbol="$" type="currency"/>
+                        </h:outputText>
+                        <p:commandButton type="button"
+                                            value="Add To Cart"
+                                            icon="pi pi-shopping-cart"
+                                            disabled="#">
+                        </p:commandButton>
+                    </div>
+                </div>
+            </p:dataViewGridItem>
+
+            <p:dataViewListItem>
+                <div class="product-list-item">
+                     <img src="/StudyStuff_1/pics/#{productobj.productImg}" height="100px" width="100px"/>
+                    <div class="product-list-detail">
+                        <div class="product-name">#{productobj.productName}</div>
+                        <div class="product-description">#{productobj.productDesc}</div>
+                        <p:rating readonly="true" value="#"/>
+                        <i class="pi pi-tag product-category-icon"/><span
+                            class="product-category">#{productobj.categoryId.categoryName}</span>
+                    </div>
+                    <div class="product-list-action">
+                        <h:outputText value="#{productobj.price}" styleClass="product-price">
+                            <f:convertNumber currencySymbol="$" type="currency"/>
+                        </h:outputText>
+                        <p:commandButton type="button"
+                                         value="Add To Cart"
+                                         icon="pi pi-shopping-cart"
+                                         disabled="#">
+                        </p:commandButton>
+                        <span class="product-badge ">Best deals</span>
+                    </div>
+                </div>
+            </p:dataViewListItem>
+        </p:dataView>
+    </h:form>
+                                
+                                 
+                            </div>
+                           
+                        </div>  
+                                </div>
+                                
+                            </div>
+                         
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Main Content Wrapper Start -->
+    
+        <ui:include src = "footer.xhtml" />
+        </div>
+        <ui:include src = "script.xhtml" />
+  
+    </h:body>
+</html>
+

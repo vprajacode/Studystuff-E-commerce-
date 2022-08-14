@@ -1,0 +1,225 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+          <ui:insert name = "css" >
+            <ui:include src = "css.xhtml" />
+        </ui:insert>    </h:head>
+    <h:body>
+              <!-- Preloader Start -->
+    <div class="ft-preloader active">
+        <div class="ft-preloader-inner h-100 d-flex align-items-center justify-content-center">
+            <div class="ft-child ft-bounce1"></div>
+            <div class="ft-child ft-bounce2"></div>
+            <div class="ft-child ft-bounce3"></div>
+        </div>
+    </div>
+    <!-- Preloader End -->
+    
+    <!-- Main Wrapper Start -->
+    <div class="wrapper">
+        <!-- Header Start -->
+        <ui:insert name = "header" >
+            <ui:include src = "header.xhtml" />
+        </ui:insert>
+        <!-- Header End -->
+
+        <!-- Breadcrumb area Start -->
+        <section class="page-title-area bg-image ptb--80" data-bg-image="assets/img/bg/page_title_bg.jpg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h1 class="page-title">Checkout</h1>
+                        <ul class="breadcrumb">
+                            <li><a href="index.xhtml">Home</a></li>
+                            <li class="current"><span>Checkout</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Breadcrumb area End -->
+
+        <!-- Main Content Wrapper Start -->
+       <div class="main-content-wrapper">
+            <div class="page-content-inner pt--80 pt-md--60 pb--72 pb-md--60">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                         
+                        </div>
+                    </div> 
+                    <div class="row">
+                        <!-- Checkout Area Start -->  
+                        <div class="col-lg-6">
+                            <div class="checkout-title mt--10">
+                                <h2>Billing Details</h2>
+                           
+                            </div>
+                            <h:form class="form form--checkout">
+                            <div class="checkout-form">
+                             
+                                 <div class="row mb--20">
+                                        <div class="form__group col-12">
+                                            <label for="billing_streetAddress" class="form__label">Street Address <span class="required">*</span></label>
+
+                                            <input type="text" name="billing_streetAddress" id="billing_streetAddress" class="form__input mb--30" placeholder="House number and street name"/>
+
+                                        </div>
+                                    </div>
+                                                          <div class="row mb--20">
+                                        <div class="form__group col-12">
+                                            <label for="billing_streetAddress" class="form__label">Second Address <span class="required">*</span></label>
+
+                                            <input type="text" name="billing_streetAddress" id="billing_streetAddress" class="form__input mb--30" placeholder="House number and street name"/>
+
+                                        </div>
+                                    </div>
+                                            
+                                           
+                                           <div class="row mb--20">
+                                        <div class="form__group col-12">
+                                            <label for="billing_city" class="form__label">Town / City <span class="required">*</span></label>
+                                            <input type="text" name="billing_city" id="billing_city" class="form__input"/>
+                                        </div>
+                                    </div>
+                                                   <div class="form__group col-12">
+                                                        <label for="shipping_phone" class="form__label">Pincode <span class="required">*</span></label>
+                                                        <input type="text" name="shipping_phone" id="shipping_phone" class="form__input"/>
+                                                    </div>
+                                    <div class="row mb--20">
+                                        <div class="form__group col-12">
+                                            <label for="billing_country" class="form__label">Country <span class="required">*</span></label>
+                                            
+                                                <h:selectOneMenu > 
+                                                   <f:selectItem itemValue = "india" itemLabel = "India" /> 
+                                                   <f:selectItem itemValue = "pakistan" itemLabel = "Pakistan" /> 
+                                                   <f:selectItem itemValue = "china" itemLabel = "China" /> 
+                                                   <f:selectItem itemValue = "USA" itemLabel = "USA" /> 
+                                                   <f:selectItem itemValue = "bangladesh" itemLabel = "Bangladesh" />     
+                                                </h:selectOneMenu>
+                                        </div>
+                                    </div> 
+                                    </div> 
+                                    <div class="row">
+                                        <div class="form__group col-12">
+                                            <label for="orderNotes" class="form__label">Order Notes</label>
+                                            <textarea class="form__input form__input--textarea" id="orderNotes" name="orderNotes" placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
+                                        </div>
+                                    </div>
+                           
+                            </h:form>
+                                
+                        </div>
+                        <div class="col-xl-5 offset-xl-1 col-lg-6 mt-md--40">
+                            <div class="order-details">
+                                <div class="checkout-title mt--10">
+                                    <h2>Your Order</h2>
+                                </div>
+                                <div class="table-content table-responsive mb--30">
+                                    <table class="table order-table order-table-2">
+                                        <thead>
+                                            <tr>
+                                                <th>Product</th>
+                                                <th class="text-right">Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th>Aliquam lobortis est 
+                                                    <strong><span>&#10005;</span>1</strong>
+                                                </th>
+                                                <td class="text-right">$80.00</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Auctor gravida enim 
+                                                    <strong><span>&#10005;</span>1</strong>
+                                                </th>
+                                                <td class="text-right">$60.00</td>
+                                            </tr>
+                                        </tbody>
+                                        <tfoot>
+                                            <tr class="cart-subtotal">
+                                                <th>Subtotal</th>
+                                                <td class="text-right">$56.00</td>
+                                            </tr>
+                                            <tr class="shipping">
+                                                <th>Shipping</th>
+                                                <td class="text-right">
+                                                    <span>Flat Rate; $20.00</span>
+                                                </td>
+                                            </tr>
+                                            <tr class="order-total">
+                                                <th>Order Total</th>
+                                                <td class="text-right"><span class="order-total-ammount">$56.00</span></td>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                                <div class="checkout-payment">
+                                    <form action="#" class="payment-form">
+                                        <div class="payment-group mb--10">
+                                            <div class="payment-radio">
+                                                <input type="radio" value="bank" name="payment-method" id="bank" />
+                                                <label class="payment-label" for="bank">Direct Bank Transfer</label>
+                                            </div>
+                                            <div class="payment-info" data-method="bank">
+                                                <p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.</p>
+                                            </div>
+                                        </div>
+                                        <div class="payment-group mb--10">
+                                            <div class="payment-radio">
+                                                <input type="radio" value="cheque" name="payment-method" id="cheque"/>
+                                                <label class="payment-label" for="cheque">
+                                                    cheque payments
+                                                </label>
+                                            </div>
+                                            <div class="payment-info cheque hide-in-default" data-method="cheque">
+                                                <p>Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</p>
+                                            </div>
+                                        </div>
+                                        <div class="payment-group mb--10">
+                                            <div class="payment-radio">
+                                                <input type="radio" value="cash" name="payment-method" id="cash"/>
+                                                <label class="payment-label" for="cash">
+                                                    CASH ON DELIVERY
+                                                </label>
+                                            </div>
+                                            <div class="payment-info cash hide-in-default" data-method="cash">
+                                                <p>Pay with cash upon delivery.</p>
+                                            </div>
+                                        </div>
+                                        <div class="payment-group mt--20">
+                                            <p class="mb--15">Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our privacy policy.</p>
+                                            <button type="submit" class="btn btn-size-md btn-fullwidth">Place Order</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Checkout Area End -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Main Content Wrapper End -->
+
+        <!-- Footer Start-->
+        <ui:insert name = "footer" >
+            <ui:include src = "footer.xhtml" />
+        </ui:insert>
+        <!-- Footer End-->
+
+     
+
+    <!-- Main Wrapper End -->
+     <ui:insert name = "script" >
+            <ui:include src = "script.xhtml" />
+     </ui:insert>
+
+    </h:body>
+</html>
+

@@ -1,0 +1,185 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+       xmlns:f="http://xmlns.jcp.org/jsf/core" 
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+       xmlns:p="http://primefaces.org/ui">
+    <h:head>
+       
+        <ui:include src = "components/css.xhtml" />
+    </h:head>
+    <h:body class="hold-transition skin-blue sidebar-mini">
+    
+        <div class="wrapper">
+                   <ui:insert name = "header" >
+                    <ui:include src = "components/header.xhtml" />
+                </ui:insert>
+                <ui:insert name = "nav" >
+                    <ui:include src = "components/nav.xhtml" />
+                </ui:insert>
+                <div class="content-wrapper">
+                    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <div class="row">
+                <div class="col-sm-6 col-md-6 col-lg-6 pull-left">
+                  <b style="font-size: 20px;">Inventory</b>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-6 ">
+<!--                <button type="button" class="btn btn-success pull-right" data-toggle="modal" data-target="#mymodel">Add</button>-->
+                <h:form>
+                <h:commandButton value="Add" id="btnAdd" action="addinventory.xhtml?faces-redirect=true" styleClass="btn btn-success pull-right"/>
+                </h:form>
+                </div>
+              </div>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body" style="overflow-x:auto;">
+                <h:form>
+<!--                    <h:dataTable id="example2" styleClass="example2" class="table table-bordered table-hover" value="#{adminBean.showinventory()}" var="inventobj">
+                    <h:column>  
+                        <f:facet name="header">ID</f:facet>  
+                        <h:outputText value="#{inventobj.inventryId}"/>  
+                    </h:column>
+                        
+                    <h:column>  
+                        <f:facet name="header">Quantity</f:facet>  
+                        <h:outputText value="#{inventobj.qty}"/>  
+                    </h:column>
+                        
+                        
+                    <h:column>  
+                       
+                        <f:facet name="header">Create date</f:facet>  
+                        <h:outputText value="#{inventobj.createdAt}">
+                       
+                        </h:outputText>  
+                    </h:column>
+                     <h:column>  
+                       
+                        <f:facet name="header">Modified date</f:facet>  
+                        <h:outputText value="#{inventobj.modifiedAt}">
+                       
+                        </h:outputText>  
+                    </h:column>
+                         <h:column>  
+                       
+                        <f:facet name="header">delete date</f:facet>  
+                        <h:outputText value="#{inventobj.deletedAt}">
+                       
+                        </h:outputText>  
+                    </h:column>
+                  
+                    <h:column>  
+                        <f:facet name="header">Update</f:facet>  
+                        <h:commandLink id="btnedit" action="#{adminBean.searchinventory(inventobj.inventryId)}" styleClass="btn btn-icon">
+                                     <h:outputText value="Edit"/>   
+                        </h:commandLink> 
+                    </h:column>
+                    <h:column>  
+                        <f:facet name="header">Delete</f:facet>  
+                        <h:commandLink id="btndelete" action="#{adminBean.deleteinventory(inventobj.inventryId)}" styleClass="btn btn-icon">
+                                     <h:outputText value="Delete"/>   
+                        </h:commandLink>
+                          
+                    </h:column>
+                </h:dataTable>  -->
+                    <p:dataTable id="dt-inventory" widgetVar="dt-inventory" var="inventobj" value="#{adminBean.showinventory()}"
+                                     reflow="true" styleClass="products-table" showGridlines="true"
+                                     paginator="true" rows="10" rowSelectMode="add" paginatorPosition="bottom"        
+                                     >
+                           
+
+
+                        <p:column headerText="Id" style="font-size: medium" sortBy="#{inventobj.inventryId}" filterBy="#{catobj.categoryId}">
+                                <h:outputText value="#{inventobj.inventryId}" style="font-size: medium"/>
+                            </p:column>
+                        <p:column headerText="Quantity" style="font-size: medium" sortBy="#{inventobj.qty}" filterBy="#{inventobj.qty}">
+                                <h:outputText value="#{inventobj.qty}" style="font-size: medium"/>
+                            </p:column>
+                       
+                               
+                        <p:column headerText="created at" style="font-size: medium" sortBy="#{inventobj.createdAt}" filterBy="#{inventobj.createdAt}" >
+                                 <h:outputText value="#{inventobj.createdAt}" style="font-size: medium"/>
+                            </p:column>  
+                               <p:column headerText="modified at" style="font-size: medium" sortBy="#{inventobj.modifiedAt}" >
+                                    <h:outputText value="#{inventobj.modifiedAt}" style="font-size: medium"/>
+                            </p:column>
+                            <p:column headerText="Update" style="font-size: medium">
+                                <p:commandLink id="btnupdate" action="#{adminBean.searchinventory(inventobj.inventryId)}" ajax="false">
+                            <i class="pi pi-check" style="font-size: 2rem"></i>
+                            </p:commandLink>    
+                            </p:column>
+                            
+                            <p:column headerText="Delete" style="font-size: medium">
+                                <p:commandLink id="btndelete" action="#{adminBean.deleteinventory(inventobj.inventryId)}" ajax="false">
+                            <i class="pi pi-times" style="font-size: 2rem"></i>
+                            </p:commandLink>    
+                            </p:column>
+                            
+                            
+                        </p:dataTable>
+                </h:form>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->    
+        <div class="modal fade" id="mymodel">
+          <div class="modal-dialog modal-md modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h3 class="modal-title text-primary">State</h3>  
+              </div>
+              <!-- Form 1 Start  -->
+<!--              <h:form id="formone" class="form-group">
+                <div class="modal-body">
+                  <div class="row">
+                    
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <label>State</label>
+                        <h:inputText class="form-control" id="StateName" value="#"/>
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <div class="row">
+                    <div class="col-md-12 text-center" style="margin-top: 10px;">
+                        <h:commandButton id="submit" class="btn btn-primary" value="Submit" action="#">
+                            <f:ajax execute="@form" render="@form" />
+                        </h:commandButton>
+                    </div>
+                  </div>
+                </div>
+              </h:form>-->
+            </div>
+          </div>
+        </div>
+
+                </div>
+                <footer class="main-footer">
+                    <ui:insert name = "footer" >
+                        <ui:include src = "components/footer.xhtml" />
+                    </ui:insert>
+                </footer>
+        </div>
+        <ui:insert name = "bootomscript" >
+            <ui:include src = "components/bottomscript.xhtml" />
+        </ui:insert>    
+        
+    
+
+    </h:body>
+</html>
+
